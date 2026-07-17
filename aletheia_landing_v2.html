@@ -352,15 +352,9 @@
 </footer>
 
 <script>
-  const DURATION_MS = 5 * 24 * 60 * 60 * 1000;
+  const DEADLINE = new Date('2026-07-21T23:59:00+02:00').getTime();
   function getDeadline() {
-    let stored = localStorage.getItem('aletheia_deadline');
-    if (!stored) {
-      const deadline = Date.now() + DURATION_MS;
-      localStorage.setItem('aletheia_deadline', deadline);
-      return deadline;
-    }
-    return parseInt(stored);
+    return DEADLINE;
   }
   function pad(n) { return String(n).padStart(2, '0'); }
   function updateCountdown() {
