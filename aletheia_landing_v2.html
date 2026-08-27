@@ -370,10 +370,11 @@
     ['cd-sec','p-sec'].forEach(id => document.getElementById(id).textContent = pad(sec));
     const heroTimer = document.getElementById('hero-timer');
     if (heroTimer) heroTimer.textContent = giorni + 'g ' + pad(ore) + ':' + pad(min) + ':' + pad(sec);
-    if (diff === 0) clearInterval(timerInterval);
+    if (diff === 0 && timerInterval) clearInterval(timerInterval);
   }
+  let timerInterval;
   updateCountdown();
-  const timerInterval = setInterval(updateCountdown, 1000);
+  timerInterval = setInterval(updateCountdown, 1000);
 
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
