@@ -4,9 +4,9 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Aletheia – Scopri chi sei. Costruisci il tuo business più vero.</title>
-<meta name="description" content="Il percorso di 5 settimane per smettere di nasconderti e costruire un business fatto di tutti i pezzi che sei. Offerta di lancio a 200€."/>
+<meta name="description" content="Il percorso di 5 settimane per smettere di nasconderti, diventare imprenditrice e costruire un business fatto di tutti i pezzi che sei. Offerta di lancio a 200€."/>
 <meta property="og:title" content="Aletheia – Scopri chi sei. Costruisci il tuo business più vero."/>
-<meta property="og:description" content="Il percorso di 5 settimane per smettere di nasconderti e costruire un business fatto di tutti i pezzi che sei. Offerta di lancio a 200€."/>
+<meta property="og:description" content="Il percorso di 5 settimane per smettere di nasconderti, diventare imprenditrice e costruire un business fatto di tutti i pezzi che sei. Offerta di lancio a 200€."/>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 90'%3E%3Cg transform='translate(45,45)'%3E%3Cellipse cx='0' cy='-32' rx='5' ry='13' fill='%23EEAF1B' opacity='0.55' transform='rotate(0)'/%3E%3Cellipse cx='0' cy='-32' rx='5' ry='13' fill='%23EEAF1B' opacity='0.55' transform='rotate(45)'/%3E%3Cellipse cx='0' cy='-32' rx='5' ry='13' fill='%23EEAF1B' opacity='0.55' transform='rotate(90)'/%3E%3Cellipse cx='0' cy='-32' rx='5' ry='13' fill='%23EEAF1B' opacity='0.55' transform='rotate(135)'/%3E%3Cellipse cx='0' cy='-32' rx='5' ry='13' fill='%23EEAF1B' opacity='0.55' transform='rotate(180)'/%3E%3Cellipse cx='0' cy='-32' rx='5' ry='13' fill='%23EEAF1B' opacity='0.55' transform='rotate(225)'/%3E%3Cellipse cx='0' cy='-32' rx='5' ry='13' fill='%23EEAF1B' opacity='0.55' transform='rotate(270)'/%3E%3Cellipse cx='0' cy='-32' rx='5' ry='13' fill='%23EEAF1B' opacity='0.55' transform='rotate(315)'/%3E%3Ccircle cx='0' cy='0' r='7' fill='%23F4D3B8'/%3E%3Ccircle cx='0' cy='0' r='4' fill='%23EEAF1B'/%3E%3C/g%3E%3C/svg%3E"/>
 <link rel="stylesheet" href="aletheia_landing_v2.css"/>
 <script>document.documentElement.classList.add('js');</script>
@@ -16,6 +16,17 @@
   .storia-highlight { color: var(--amaranth); font-weight: 700; }
   .carte-grid .dopo-card h3 { text-transform: none; font-size: 17px; letter-spacing: 0.3px; }
   .carte-note { margin-top: 36px; font-size: 15px; font-weight: 300; color: var(--text-mid); line-height: 1.7; max-width: 640px; }
+
+  /* ── glitter / sparkle accents ── */
+  @keyframes sparkle-twinkle {
+    0%, 100% { opacity: 0; transform: scale(0.3) rotate(0deg); }
+    50% { opacity: 1; transform: scale(1) rotate(20deg); }
+  }
+  .sparkle { position: absolute; pointer-events: none; z-index: 2; animation: sparkle-twinkle 2.8s ease-in-out infinite; }
+  .sparkle svg { display: block; }
+  .hero, .section-meaning, .prezzo-box { position: relative; }
+  .hero { overflow: hidden; }
+  @media (prefers-reduced-motion: reduce) { .sparkle { animation: none; opacity: 0.6; } }
 </style>
 </head>
 <body>
@@ -52,6 +63,11 @@
 
 <!-- HERO -->
 <section class="hero">
+  <span class="sparkle" style="top:14%; left:10%; animation-delay:0s;"><svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 0C12 6 6 12 0 12C6 12 12 18 12 24C12 18 18 12 24 12C18 12 12 6 12 0Z" fill="#EEAF1B"/></svg></span>
+  <span class="sparkle" style="top:22%; right:12%; animation-delay:0.9s;"><svg width="10" height="10" viewBox="0 0 24 24"><path d="M12 0C12 6 6 12 0 12C6 12 12 18 12 24C12 18 18 12 24 12C18 12 12 6 12 0Z" fill="#F4D3B8"/></svg></span>
+  <span class="sparkle" style="top:62%; left:6%; animation-delay:1.6s;"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M12 0C12 6 6 12 0 12C6 12 12 18 12 24C12 18 18 12 24 12C18 12 12 6 12 0Z" fill="#EEAF1B"/></svg></span>
+  <span class="sparkle" style="top:70%; right:8%; animation-delay:0.4s;"><svg width="12" height="12" viewBox="0 0 24 24"><path d="M12 0C12 6 6 12 0 12C6 12 12 18 12 24C12 18 18 12 24 12C18 12 12 6 12 0Z" fill="#EEAF1B"/></svg></span>
+  <span class="sparkle" style="top:8%; left:48%; animation-delay:2.1s;"><svg width="9" height="9" viewBox="0 0 24 24"><path d="M12 0C12 6 6 12 0 12C6 12 12 18 12 24C12 18 18 12 24 12C18 12 12 6 12 0Z" fill="#F4D3B8"/></svg></span>
   <div class="hero-bloom">
     <svg width="90" height="90" viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg">
       <g transform="translate(45,45)">
@@ -77,8 +93,8 @@
     </svg>
   </div>
   <div class="hero-label">Il percorso · 5 settimane · Edizione di lancio</div>
-  <h1>Scopri chi sei.<br/><span>Costruisci il tuo business più vero.</span></h1>
-  <p class="hero-sub">Non sei qui <strong>SOLO</strong> per costruire un business da zero. Sei qui per smettere di nasconderlo. Quello vero — fatto di tutti i pezzi che sei, non di uno solo scelto per sembrare specializzata — è già lì. Aletheia non te lo insegna. <strong>Te lo fa vedere.</strong></p>
+  <h1>Scopri chi sei.<br/><span>Diventa l'imprenditrice più vera di te.</span></h1>
+  <p class="hero-sub">Non sei qui <strong>SOLO</strong> per costruire un business da zero. Sei qui per smettere di nasconderlo e diventare finalmente l'<strong>imprenditrice</strong> che già sei. Quella vera — fatta di tutti i pezzi che sei, non di uno solo scelto per sembrare specializzata — è già lì. Aletheia non te lo insegna. <strong>Te lo fa vedere.</strong></p>
   <a href="https://buy.stripe.com/cNidR90PcfMvcGJ5YhbMQ03" class="btn-primary">Sì, voglio partecipare</a>
   <p class="hero-price-note">Offerta di lancio: <strong>200€</strong> invece di 400€ · Risparmi <strong>200€</strong></p>
 </section>
@@ -106,7 +122,7 @@
   <div class="container reveal">
     <div class="section-label section-label--gold">La verità che nessuno ti dice</div>
     <h2>Il business che funziona davvero non nasce da una <span>formula presa in prestito.</span><br/>Nasce da quello che sei <span>già.</span></h2>
-    <p>Messo finalmente in ordine, in una struttura che regge — invece che nascosto per sembrare "professionale". Non ti serve inventarti qualcun altra. Ti serve smettere di nasconderti.</p>
+    <p>Messo finalmente in ordine, in una struttura che regge — invece che nascosto per sembrare "professionale". Non ti serve inventarti qualcun altra. Ti serve smettere di nasconderti e diventare l'imprenditrice che sei davvero.</p>
     <p><strong>Questo è Aletheia.</strong></p>
   </div>
 </section>
@@ -128,6 +144,9 @@
 
 <!-- ETIMOLOGIA -->
 <section class="section-meaning">
+  <span class="sparkle" style="top:18%; left:20%; animation-delay:0.3s;"><svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 0C12 6 6 12 0 12C6 12 12 18 12 24C12 18 18 12 24 12C18 12 12 6 12 0Z" fill="#822C40" opacity="0.5"/></svg></span>
+  <span class="sparkle" style="top:24%; right:18%; animation-delay:1.3s;"><svg width="11" height="11" viewBox="0 0 24 24"><path d="M12 0C12 6 6 12 0 12C6 12 12 18 12 24C12 18 18 12 24 12C18 12 12 6 12 0Z" fill="#822C40" opacity="0.5"/></svg></span>
+  <span class="sparkle" style="bottom:16%; left:34%; animation-delay:2s;"><svg width="9" height="9" viewBox="0 0 24 24"><path d="M12 0C12 6 6 12 0 12C6 12 12 18 12 24C12 18 18 12 24 12C18 12 12 6 12 0Z" fill="#822C40" opacity="0.5"/></svg></span>
   <div class="container reveal">
     <div class="meaning-word">ΑΛΗΘΕΙΑ</div>
     <div class="meaning-greek">ἀλήθεια · dal greco antico</div>
@@ -166,7 +185,7 @@
         <p>Prendi tutti i pezzi sparsi di te — passioni, esperienze, anche quelle che sembravano fallimenti — e li trasformi in un ecosistema che vale più della somma delle parti.</p>
       </div>
     </div>
-    <p class="carte-note reveal">Non sono quattro competenze da studiare. Sono quattro parti di te che già esistono. Aletheia le disvela una per una. Se hai già partecipato alla lezione live di apertura, le hai già incontrate — le hai viste, le hai riconosciute. Ma riconoscerle non basta: dentro il percorso ci lavoriamo davvero, una alla volta, partendo proprio da quella su cui non abbiamo ancora messo le mani insieme — la leadership, la carta Superstar.</p>
+    <p class="carte-note reveal">Non sono quattro competenze da studiare. Sono quattro parti di te che già esistono. Se hai già partecipato a "2027 Superstar — Introduzione", le hai già incontrate — le hai viste, le hai riconosciute. Ma riconoscerle non basta: dentro il percorso ci lavoriamo davvero, due carte alla volta.</p>
   </div>
 </section>
 
@@ -176,14 +195,24 @@
     <div class="reveal">
       <div class="section-label">Il percorso · 5 settimane</div>
       <h2>Come è strutturato il percorso</h2>
-      <p class="intro">Il ritmo è pensato per darti profondità senza travolgerti. Ogni settimana costruisce sulla precedente: prima la leadership su te stessa, poi la visione che diventa offerta, poi la strategia che legge i problemi come mosse, infine la trasformazione che tiene insieme tutti i pezzi in un ecosistema.</p>
+      <p class="intro">Il ritmo è pensato per darti profondità senza travolgerti. Due masterclass — ognuna su una coppia di carte — alternate a due coaching call di gruppo per elaborare insieme quello che emerge.</p>
     </div>
     <div class="moduli-list">
-      <div class="modulo reveal"><div class="modulo-num">01</div><div><span class="modulo-tag tag-masterclass">Lezione live · Settimana 1</span><h3>Superstar — la leadership che non aspetta il permesso di nessuno</h3><p>Impari a guidare te stessa e chi ti segue verso lo standard più alto, con esercizi ed esempi concreti applicati al tuo business.</p></div></div>
-      <div class="modulo reveal"><div class="modulo-num">02</div><div><span class="modulo-tag tag-masterclass">Lezione live · Settimana 2</span><h3>Visionaria — l'offerta che è davvero solo tua</h3><p>Smetti di censurare le tue idee per piacere a tutti. Costruiamo insieme un'offerta che nasce da quello che sei, non da un modello preso in prestito.</p></div></div>
-      <div class="modulo reveal"><div class="modulo-num">03</div><div><span class="modulo-tag tag-masterclass">Lezione live · Settimana 3</span><h3>Elaboratrice — i problemi diventano mosse</h3><p>Impari a leggere gli ostacoli del tuo business come mosse da giocare, non come muri da subire.</p></div></div>
-      <div class="modulo reveal"><div class="modulo-num">04</div><div><span class="modulo-tag tag-masterclass">Lezione live · Settimana 4</span><h3>Alchimista — il tuo ecosistema prende forma</h3><p>Prendi tutti i pezzi sparsi di te — passioni, esperienze, anche i "fallimenti" — e li trasformi in un business che vale più della somma delle parti.</p></div></div>
-      <div class="modulo reveal"><div class="modulo-num">05</div><div><span class="modulo-tag tag-coaching">Coaching call di gruppo · Settimana 5</span><h3>Il cerchio si chiude</h3><p>Porti i tuoi casi reali, sblocchiamo insieme i punti dove sei ferma, con il confronto di tutto il gruppo. Esci con un piano concreto per i prossimi mesi.</p></div></div>
+      <div class="modulo reveal"><div class="modulo-num">01</div><div><span class="modulo-tag tag-coaching">Lezione live di apertura · Settimana 1 · già disponibile</span><h3>2027 Superstar — Introduzione: scopriamo le carte</h3><p>La lezione dal vivo che apre il percorso: incontri per la prima volta le quattro carte — Superstar, Visionaria, Elaboratrice, Alchimista — e riconosci quali già vivono in te.</p></div></div>
+      <div class="modulo reveal"><div class="modulo-num">02</div><div><span class="modulo-tag tag-masterclass">Masterclass 1 · Settimana 2</span><h3>Superstar & Visionaria</h3><p>Due carte, una masterclass: prima la leadership su te stessa, poi la visione che diventa offerta.</p>
+        <div class="modulo-topics">
+          <div class="modulo-topic"><h4>Superstar — la leadership che non aspetta il permesso di nessuno</h4><p>Impari a guidare te stessa e chi ti segue verso lo standard più alto, con esercizi ed esempi concreti applicati al tuo business.</p></div>
+          <div class="modulo-topic"><h4>Visionaria — l'offerta che è davvero solo tua</h4><p>Smetti di censurare le tue idee per piacere a tutti. Costruiamo insieme un'offerta che nasce da quello che sei, non da un modello preso in prestito.</p></div>
+        </div>
+      </div></div>
+      <div class="modulo reveal"><div class="modulo-num">03</div><div><span class="modulo-tag tag-coaching">Coaching call di gruppo · Settimana 3</span><h3>Metti in pratica ciò che hai scoperto</h3><p>Porti i tuoi casi reali, sblocchiamo insieme i punti dove sei ferma su Superstar e Visionaria, con il confronto di tutto il gruppo.</p></div></div>
+      <div class="modulo reveal"><div class="modulo-num">04</div><div><span class="modulo-tag tag-masterclass">Masterclass 2 · Settimana 4</span><h3>Elaboratrice & Alchimista</h3><p>Le ultime due carte: la strategia che legge i problemi come mosse, e la trasformazione che tiene insieme tutti i pezzi in un ecosistema.</p>
+        <div class="modulo-topics">
+          <div class="modulo-topic"><h4>Elaboratrice — i problemi diventano mosse</h4><p>Impari a leggere gli ostacoli del tuo business come mosse da giocare, non come muri da subire.</p></div>
+          <div class="modulo-topic"><h4>Alchimista — il tuo ecosistema prende forma</h4><p>Prendi tutti i pezzi sparsi di te — passioni, esperienze, anche i "fallimenti" — e li trasformi in un business che vale più della somma delle parti.</p></div>
+        </div>
+      </div></div>
+      <div class="modulo reveal"><div class="modulo-num">05</div><div><span class="modulo-tag tag-coaching">Coaching call di gruppo · Settimana 5</span><h3>Il cerchio si chiude</h3><p>Porti i tuoi casi reali su Elaboratrice e Alchimista, sblocchiamo insieme gli ultimi dubbi con il confronto di tutto il gruppo. Esci con le tue quattro carte disvelate e un piano concreto per diventare imprenditrice nei prossimi mesi.</p></div></div>
     </div>
   </div>
 </section>
@@ -217,7 +246,7 @@
   <div class="container">
     <div class="reveal">
       <div class="section-label">Per chi è</div>
-      <h2>Aletheia è pensato per chi è pronto a togliere il velo.</h2>
+      <h2>Aletheia è pensato per chi è pronta a diventare imprenditrice togliendo il velo.</h2>
     </div>
     <div class="perchi-cols reveal">
       <div class="perchi-col si">
@@ -288,8 +317,10 @@
 <!-- PREZZO -->
 <section class="section-prezzo" id="prezzo">
   <div class="container reveal">
-    <div class="section-label section-label--gold-centered">Entra in Aletheia</div>
+    <div class="section-label section-label--gold-centered">Diventa imprenditrice con Aletheia</div>
     <div class="prezzo-box">
+      <span class="sparkle" style="top:8%; left:8%; animation-delay:0.5s;"><svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 0C12 6 6 12 0 12C6 12 12 18 12 24C12 18 18 12 24 12C18 12 12 6 12 0Z" fill="#EEAF1B"/></svg></span>
+      <span class="sparkle" style="top:12%; right:10%; animation-delay:1.5s;"><svg width="11" height="11" viewBox="0 0 24 24"><path d="M12 0C12 6 6 12 0 12C6 12 12 18 12 24C12 18 18 12 24 12C18 12 12 6 12 0Z" fill="#EEAF1B"/></svg></span>
       <div class="prezzo-label">Offerta di lancio</div>
       <div class="prezzo-crossed">400€</div>
       <div class="prezzo-amount"><sup>€</sup>200</div>
@@ -314,7 +345,7 @@
     <div class="faq-list">
       <div class="faq-item reveal"><p class="faq-q">Cosa succede se non riesco a seguire una lezione live?</p><p class="faq-a">Ricevi la registrazione, così non perdi nulla del percorso.</p></div>
       <div class="faq-item reveal"><p class="faq-q">Devo già avere un business avviato?</p><p class="faq-a">No. Aletheia funziona sia se stai partendo da zero, sia se hai già iniziato e vuoi mettere ordine.</p></div>
-      <div class="faq-item reveal"><p class="faq-q">Cosa mi porto a casa alla fine delle 5 settimane?</p><p class="faq-a">Le tue quattro carte disvelate, e una struttura chiara per il tuo business ecosistema — non solo teoria, ma le mosse concrete dei prossimi mesi.</p></div>
+      <div class="faq-item reveal"><p class="faq-q">Cosa mi porto a casa alla fine delle 5 settimane?</p><p class="faq-a">Le tue quattro carte disvelate, e una struttura chiara per il tuo business ecosistema — non solo teoria, ma le mosse concrete per diventare imprenditrice nei prossimi mesi.</p></div>
     </div>
   </div>
 </section>
@@ -322,7 +353,7 @@
 <!-- FINAL CTA -->
 <section class="section-cta-final">
   <div class="container reveal">
-    <h2>Crea un business in libertà.</h2>
+    <h2>Diventa imprenditrice, in libertà.</h2>
     <p>Seguendo le tue passioni, i tuoi talenti, le tue competenze. Un business che sostiene la tua vita — non uno che te la consuma. Il velo si toglie ora — e fino a lunedì 14 settembre a mezzanotte, lo fai a metà prezzo. <strong>Si parte.</strong></p>
     <a href="https://buy.stripe.com/cNidR90PcfMvcGJ5YhbMQ03" class="btn-dark">Sì, voglio partecipare →</a>
   </div>
