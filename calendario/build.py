@@ -2,8 +2,12 @@
 """Genera index.html e lezioni-aletheia-program.ics a partire da lezioni.json.
 
 Uso: python3 calendario/build.py   (dalla radice del repo, o da qualsiasi cartella)
+Per ogni lezione si può aggiungere "durata_minuti" (altrimenti vale quella globale).
+Per un nuovo percorso: copia la cartella (es. calendario-nuovo/), cambia lezioni.json e lancia il build.py della copia.
 """
 import json
+import re
+import unicodedata
 from datetime import datetime, timedelta, timezone
 from html import escape
 from pathlib import Path
@@ -12,15 +16,15 @@ from zoneinfo import ZoneInfo
 
 HERE = Path(__file__).parent
 SITE = "teresabrachdelprever.github.io"
-ICS_NAME = "lezioni-aletheia-program.ics"
 GIORNI = ["lunedì", "martedì", "mercoledì", "giovedì", "venerdì", "sabato", "domenica"]
 MESI = ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio",
         "agosto", "settembre", "ottobre", "novembre", "dicembre"]
 
 data = json.loads((HERE / "lezioni.json").read_text(encoding="utf-8"))
 tz = ZoneInfo(data["timezone"])
-durata = timedelta(minutes=data["durata_minuti"])
 corso = data["corso"]
+slug = re.sub(r"[^a-z0-9]+", "-", unicodedata.normalize("NFKD", corso).encode("ascii", "ignore").decode().lower()).strip("-")
+ICS_NAME = f"lezioni-{slug}.ics"
 
 
 def eventi():
@@ -29,7 +33,7 @@ def eventi():
         yield {
             **l,
             "inizio_dt": inizio,
-            "fine_dt": inizio + durata,
+            "fine_dt": inizio + timedelta(minutes=l.get("durata_minuti", data["durata_minuti"])),
             "titolo_completo": f"{corso} · {l['titolo']}",
             "descrizione": f"{corso}\n{l['titolo']}\n\nEntra su Zoom: {l['zoom']}",
         }
@@ -76,7 +80,7 @@ def build_ics(evs):
     lines = [
         "BEGIN:VCALENDAR",
         "VERSION:2.0",
-        "PRODID:-//Teresa Brach del Prever//Aletheia Program//IT",
+        f"PRODID:-//Teresa Brach del Prever//{corso}//IT",
         "CALSCALE:GREGORIAN",
         "METHOD:PUBLISH",
         f"X-WR-CALNAME:{corso}",
@@ -113,7 +117,7 @@ def card(e):
     return f"""    <article class="lesson">
       <div class="lesson-date"><span class="day">{d.day}</span><span class="month">{MESI[d.month - 1][:3]}</span></div>
       <div class="lesson-body">
-        <h2>{e['emoji']} {escape(e['titolo'])}</h2>
+        <h2>{(e.get('emoji', '') + ' ').lstrip()}{escape(e['titolo'])}</h2>
         <p class="when">{quando} · {orario}</p>
         <div class="actions">
           <a class="btn" href="{escape(e.get('calendar_url') or google_url(e))}" target="_blank" rel="noopener">＋ Aggiungi a Google Calendar</a>
@@ -126,11 +130,14 @@ def card(e):
 TEMPLATE = (HERE / "template.html").read_text(encoding="utf-8")
 
 evs = list(eventi())
+for vecchio in HERE.glob("lezioni-*.ics"):  # es. dopo aver rinominato il percorso
+    if vecchio.name != ICS_NAME:
+        vecchio.unlink()
 (HERE / ICS_NAME).write_bytes(build_ics(evs).encode("utf-8"))
 page = (
     TEMPLATE.replace("{{CORSO}}", escape(corso))
     .replace("{{CARDS}}", "\n".join(card(e) for e in evs))
-    .replace("{{SUBSCRIBE_URL}}", f"https://calendar.google.com/calendar/r?cid=webcal://{SITE}/calendario/{ICS_NAME}")
+    .replace("{{SUBSCRIBE_URL}}", f"https://calendar.google.com/calendar/r?cid=webcal://{SITE}/{HERE.name}/{ICS_NAME}")
     .replace("{{ICS_NAME}}", ICS_NAME)
 )
 (HERE / "index.html").write_text(page, encoding="utf-8")
