@@ -144,7 +144,7 @@
   <p class="lead">Un click e l'evento è nel tuo Google Calendar, con il link Zoom già dentro.</p>
 
   <main class="wrap">
-    <a class="btn all" href="https://calendar.google.com/calendar/r?cid=webcal://teresabrachdelprever.github.io/calendario/lezioni-aletheia-program.ics" target="_blank" rel="noopener">＋ Aggiungi tutte le lezioni</a>
+    <a class="btn all" id="all" href="https://calendar.google.com/calendar/r?cid=webcal://teresabrachdelprever.github.io/calendario/lezioni-aletheia-program.ics" data-mobile="lezioni-aletheia-program.ics" target="_blank" rel="noopener">＋ Aggiungi tutte le lezioni</a>
 
     <article class="lesson">
       <div class="lesson-date"><span class="day">24</span><span class="month">set</span></div>
@@ -198,6 +198,17 @@
   </main>
 
   <footer>© 2026 Teresa Brach del Prever</footer>
+
+  <script>
+    // L'app Google Calendar del telefono non sa iscriversi a un calendario da URL (mostra un nome illeggibile):
+    // da telefono "Aggiungi tutte" apre il file .ics, da computer resta l'iscrizione.
+    (function () {
+      var a = document.getElementById('all');
+      var mobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) ||
+        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      if (mobile) { a.href = a.getAttribute('data-mobile'); a.removeAttribute('target'); }
+    })();
+  </script>
 
 </body>
 </html>
