@@ -113,6 +113,7 @@
     margin-top: 4px;
   }
   .note a { color: var(--amaranth); }
+  @media (hover: none) and (pointer: coarse) { .desktop-only { display: none; } }
   footer { margin-top: 40px; font-size: 12px; color: var(--text-mid); opacity: .7; }
   @media (max-width: 380px) {
     .lesson { padding: 14px; gap: 12px; }
@@ -144,28 +145,17 @@
   <p class="lead">Un click e l'evento è nel tuo Google Calendar, con il link Zoom già dentro.</p>
 
   <main class="wrap">
-    <a class="btn all" id="all" href="{{SUBSCRIBE_URL}}" data-mobile="{{ICS_NAME}}" target="_blank" rel="noopener">＋ Aggiungi tutte le lezioni</a>
+    <a class="btn all desktop-only" href="{{SUBSCRIBE_URL}}" target="_blank" rel="noopener">＋ Aggiungi tutte le lezioni</a>
 
 {{CARDS}}
 
     <p class="note">
-      Orari in fuso orario di Roma: il tuo calendario li converte in automatico.<br>
-      Usi Apple Calendar o Outlook? <a href="{{ICS_NAME}}">Scarica il file .ics</a>
+      Orari in fuso orario di Roma: il tuo calendario li converte in automatico.
     </p>
   </main>
 
   <footer>© 2026 Teresa Brach del Prever</footer>
 
-  <script>
-    // L'app Google Calendar del telefono non sa iscriversi a un calendario da URL (mostra un nome illeggibile):
-    // da telefono "Aggiungi tutte" apre il file .ics, da computer resta l'iscrizione.
-    (function () {
-      var a = document.getElementById('all');
-      var mobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) ||
-        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-      if (mobile) { a.href = a.getAttribute('data-mobile'); a.removeAttribute('target'); }
-    })();
-  </script>
 
 </body>
 </html>
