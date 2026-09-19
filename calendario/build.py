@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Genera index.html e lezioni-2027-superstar.ics a partire da lezioni.json.
+"""Genera index.html e lezioni-aletheia-program.ics a partire da lezioni.json.
 
 Uso: python3 calendario/build.py   (dalla radice del repo, o da qualsiasi cartella)
 """
@@ -12,7 +12,7 @@ from zoneinfo import ZoneInfo
 
 HERE = Path(__file__).parent
 SITE = "teresabrachdelprever.github.io"
-ICS_NAME = "lezioni-2027-superstar.ics"
+ICS_NAME = "lezioni-aletheia-program.ics"
 GIORNI = ["lunedì", "martedì", "mercoledì", "giovedì", "venerdì", "sabato", "domenica"]
 MESI = ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio",
         "agosto", "settembre", "ottobre", "novembre", "dicembre"]
@@ -76,7 +76,7 @@ def build_ics(evs):
     lines = [
         "BEGIN:VCALENDAR",
         "VERSION:2.0",
-        "PRODID:-//Teresa Brach del Prever//2027 Superstar//IT",
+        "PRODID:-//Teresa Brach del Prever//Aletheia Program//IT",
         "CALSCALE:GREGORIAN",
         "METHOD:PUBLISH",
         f"X-WR-CALNAME:{corso}",
@@ -116,7 +116,7 @@ def card(e):
         <h2>{e['emoji']} {escape(e['titolo'])}</h2>
         <p class="when">{quando} · {orario}</p>
         <div class="actions">
-          <a class="btn" href="{escape(google_url(e))}" target="_blank" rel="noopener">＋ Aggiungi a Google Calendar</a>
+          <a class="btn" href="{escape(e.get('calendar_url') or google_url(e))}" target="_blank" rel="noopener">＋ Aggiungi a Google Calendar</a>
           <a class="zoom" href="{escape(e['zoom'])}" target="_blank" rel="noopener">Link Zoom</a>
         </div>
       </div>
