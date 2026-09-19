@@ -1,0 +1,84 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Teresa Brach del Prever//2027 Superstar//IT
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:2027 SUPERSTAR
+X-WR-TIMEZONE:Europe/Rome
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:lezione-2@teresabrachdelprever.github.io
+DTSTAMP:20260919T081019Z
+DTSTART:20260924T110000Z
+DTEND:20260924T120000Z
+SUMMARY:2027 SUPERSTAR · Lezione 2 – Superstar & Visionaria
+DESCRIPTION:2027 SUPERSTAR\nLezione 2 – Superstar & Visionaria\n\nEntra s
+ u Zoom: https://us06web.zoom.us/j/81309396090?pwd=FBbDrXq6ZgMEwf1T4Ta0vswh
+ an2kgR.1
+LOCATION:https://us06web.zoom.us/j/81309396090?pwd=FBbDrXq6ZgMEwf1T4Ta0vswh
+ an2kgR.1
+URL:https://us06web.zoom.us/j/81309396090?pwd=FBbDrXq6ZgMEwf1T4Ta0vswhan2kg
+ R.1
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:2027 SUPERSTAR · Lezione 2 – Superstar & Visionaria
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:coaching-settimana-4@teresabrachdelprever.github.io
+DTSTAMP:20260919T081019Z
+DTSTART:20261001T110000Z
+DTEND:20261001T120000Z
+SUMMARY:2027 SUPERSTAR · Coaching call settimana 4
+DESCRIPTION:2027 SUPERSTAR\nCoaching call settimana 4\n\nEntra su Zoom: htt
+ ps://us06web.zoom.us/j/83614983709?pwd=NQXZYwGLu2vOygZjZShrSUTbNkUTRl.1
+LOCATION:https://us06web.zoom.us/j/83614983709?pwd=NQXZYwGLu2vOygZjZShrSUTb
+ NkUTRl.1
+URL:https://us06web.zoom.us/j/83614983709?pwd=NQXZYwGLu2vOygZjZShrSUTbNkUTR
+ l.1
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:2027 SUPERSTAR · Coaching call settimana 4
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:lezione-3@teresabrachdelprever.github.io
+DTSTAMP:20260919T081019Z
+DTSTART:20261009T170000Z
+DTEND:20261009T180000Z
+SUMMARY:2027 SUPERSTAR · Lezione 3 – Elaboratrice ed Alchimista
+DESCRIPTION:2027 SUPERSTAR\nLezione 3 – Elaboratrice ed Alchimista\n\nEnt
+ ra su Zoom: https://us06web.zoom.us/j/83106533400?pwd=tX3StsrNXvHqXDJ9boAS
+ jpWChMALM1.1
+LOCATION:https://us06web.zoom.us/j/83106533400?pwd=tX3StsrNXvHqXDJ9boASjpWC
+ hMALM1.1
+URL:https://us06web.zoom.us/j/83106533400?pwd=tX3StsrNXvHqXDJ9boASjpWChMALM
+ 1.1
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:2027 SUPERSTAR · Lezione 3 – Elaboratrice ed Alchimista
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:coaching-settimana-6@teresabrachdelprever.github.io
+DTSTAMP:20260919T081019Z
+DTSTART:20261015T120000Z
+DTEND:20261015T130000Z
+SUMMARY:2027 SUPERSTAR · Coaching call settimana 6
+DESCRIPTION:2027 SUPERSTAR\nCoaching call settimana 6\n\nEntra su Zoom: htt
+ ps://us06web.zoom.us/j/81954351433?pwd=eGYrVRufUvQXkgmacwEXYrdKQ2z2Bw.1
+LOCATION:https://us06web.zoom.us/j/81954351433?pwd=eGYrVRufUvQXkgmacwEXYrdK
+ Q2z2Bw.1
+URL:https://us06web.zoom.us/j/81954351433?pwd=eGYrVRufUvQXkgmacwEXYrdKQ2z2B
+ w.1
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:2027 SUPERSTAR · Coaching call settimana 6
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

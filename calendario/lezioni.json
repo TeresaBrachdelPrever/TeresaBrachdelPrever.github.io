@@ -1,0 +1,35 @@
+{
+  "corso": "2027 SUPERSTAR",
+  "timezone": "Europe/Rome",
+  "durata_minuti": 60,
+  "lezioni": [
+    {
+      "id": "lezione-2",
+      "titolo": "Lezione 2 – Superstar & Visionaria",
+      "emoji": "✨",
+      "inizio": "2026-09-24T13:00",
+      "zoom": "https://us06web.zoom.us/j/81309396090?pwd=FBbDrXq6ZgMEwf1T4Ta0vswhan2kgR.1"
+    },
+    {
+      "id": "coaching-settimana-4",
+      "titolo": "Coaching call settimana 4",
+      "emoji": "🔥",
+      "inizio": "2026-10-01T13:00",
+      "zoom": "https://us06web.zoom.us/j/83614983709?pwd=NQXZYwGLu2vOygZjZShrSUTbNkUTRl.1"
+    },
+    {
+      "id": "lezione-3",
+      "titolo": "Lezione 3 – Elaboratrice ed Alchimista",
+      "emoji": "🎯",
+      "inizio": "2026-10-09T19:00",
+      "zoom": "https://us06web.zoom.us/j/83106533400?pwd=tX3StsrNXvHqXDJ9boASjpWChMALM1.1"
+    },
+    {
+      "id": "coaching-settimana-6",
+      "titolo": "Coaching call settimana 6",
+      "emoji": "🔥",
+      "inizio": "2026-10-15T14:00",
+      "zoom": "https://us06web.zoom.us/j/81954351433?pwd=eGYrVRufUvQXkgmacwEXYrdKQ2z2Bw.1"
+    }
+  ]
+}
