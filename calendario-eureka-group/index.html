@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Eureka Group · Aggiungi al calendario</title>
+<meta name="description" content="Aggiungi con un click la coaching call al tuo Google Calendar."/>
+<meta name="robots" content="noindex"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 90'%3E%3Cg transform='translate(45,45)'%3E%3Cellipse cx='0' cy='-32' rx='5' ry='13' fill='%23EEAF1B' opacity='0.55' transform='rotate(0)'/%3E%3Cellipse cx='0' cy='-32' rx='5' ry='13' fill='%23EEAF1B' opacity='0.55' transform='rotate(45)'/%3E%3Cellipse cx='0' cy='-32' rx='5' ry='13' fill='%23EEAF1B' opacity='0.55' transform='rotate(90)'/%3E%3Cellipse cx='0' cy='-32' rx='5' ry='13' fill='%23EEAF1B' opacity='0.55' transform='rotate(135)'/%3E%3Cellipse cx='0' cy='-32' rx='5' ry='13' fill='%23EEAF1B' opacity='0.55' transform='rotate(180)'/%3E%3Cellipse cx='0' cy='-32' rx='5' ry='13' fill='%23EEAF1B' opacity='0.55' transform='rotate(225)'/%3E%3Cellipse cx='0' cy='-32' rx='5' ry='13' fill='%23EEAF1B' opacity='0.55' transform='rotate(270)'/%3E%3Cellipse cx='0' cy='-32' rx='5' ry='13' fill='%23EEAF1B' opacity='0.55' transform='rotate(315)'/%3E%3Ccircle cx='0' cy='0' r='7' fill='%23F4D3B8'/%3E%3Ccircle cx='0' cy='0' r='4' fill='%23EEAF1B'/%3E%3C/g%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #EEAF1B;
+    --peach: #F4D3B8;
+    --amaranth: #822C40;
+    --amaranth-dark: #5a1e2b;
+    --cream: #FDFAF5;
+    --white: #ffffff;
+    --text-dark: #1a1a1a;
+    --text-mid: #444;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 48px 16px;
+  }
+  .bloom { margin-bottom: 16px; }
+  .eyebrow {
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: var(--amaranth);
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  h1 {
+    font-size: 26px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 10px;
+    line-height: 1.25;
+  }
+  .lead {
+    font-size: 15px;
+    color: var(--text-mid);
+    text-align: center;
+    max-width: 420px;
+    margin-bottom: 28px;
+    line-height: 1.5;
+  }
+  .wrap { width: 100%; max-width: 480px; display: flex; flex-direction: column; gap: 16px; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--amaranth);
+    color: var(--white);
+    border: 1px solid var(--amaranth);
+    border-radius: 100px;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
+    transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .btn:hover { background: var(--amaranth-dark); transform: translateY(-2px); box-shadow: 0 6px 16px rgba(130,44,64,.18); }
+  .btn.all { padding: 18px 24px; font-size: 16px; }
+  .lesson {
+    display: flex;
+    gap: 16px;
+    background: var(--white);
+    border: 1px solid rgba(130,44,64,.12);
+    border-radius: 20px;
+    padding: 18px;
+    box-shadow: 0 1px 3px rgba(130,44,64,.06);
+  }
+  .lesson-date {
+    flex: none;
+    width: 58px;
+    height: 64px;
+    border-radius: 14px;
+    background: var(--peach);
+    color: var(--amaranth);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.05;
+  }
+  .lesson-date .day { font-size: 24px; font-weight: 700; }
+  .lesson-date .month { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+  .lesson-body { min-width: 0; flex: 1; }
+  .lesson h2 { font-size: 16px; font-weight: 700; line-height: 1.3; }
+  .when { font-size: 14px; color: var(--text-mid); margin: 4px 0 12px; }
+  .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; }
+  .zoom { font-size: 13px; font-weight: 500; color: var(--amaranth); }
+  .note {
+    font-size: 12px;
+    color: var(--text-mid);
+    text-align: center;
+    line-height: 1.6;
+    margin-top: 4px;
+  }
+  .note a { color: var(--amaranth); }
+  @media (hover: none) and (pointer: coarse) { .desktop-only { display: none; } }
+  footer { margin-top: 40px; font-size: 12px; color: var(--text-mid); opacity: .7; }
+  @media (max-width: 380px) {
+    .lesson { padding: 14px; gap: 12px; }
+    .lesson-date { width: 50px; height: 58px; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="bloom">
+    <svg width="56" height="56" viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g transform="translate(45,45)">
+        <ellipse cx="0" cy="-32" rx="5" ry="13" fill="#EEAF1B" opacity="0.55" transform="rotate(0)"/>
+        <ellipse cx="0" cy="-32" rx="5" ry="13" fill="#EEAF1B" opacity="0.55" transform="rotate(45)"/>
+        <ellipse cx="0" cy="-32" rx="5" ry="13" fill="#EEAF1B" opacity="0.55" transform="rotate(90)"/>
+        <ellipse cx="0" cy="-32" rx="5" ry="13" fill="#EEAF1B" opacity="0.55" transform="rotate(135)"/>
+        <ellipse cx="0" cy="-32" rx="5" ry="13" fill="#EEAF1B" opacity="0.55" transform="rotate(180)"/>
+        <ellipse cx="0" cy="-32" rx="5" ry="13" fill="#EEAF1B" opacity="0.55" transform="rotate(225)"/>
+        <ellipse cx="0" cy="-32" rx="5" ry="13" fill="#EEAF1B" opacity="0.55" transform="rotate(270)"/>
+        <ellipse cx="0" cy="-32" rx="5" ry="13" fill="#EEAF1B" opacity="0.55" transform="rotate(315)"/>
+        <circle cx="0" cy="0" r="7" fill="#F4D3B8"/>
+        <circle cx="0" cy="0" r="4" fill="#EEAF1B"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="eyebrow">Eureka Group</div>
+  <h1>Aggiungi la coaching call al tuo calendario</h1>
+  <p class="lead">Un click e l'evento è nel tuo Google Calendar, con il link Zoom già dentro.</p>
+
+  <main class="wrap">
+    <article class="lesson">
+      <div class="lesson-date"><span class="day">3</span><span class="month">ott</span></div>
+      <div class="lesson-body">
+        <h2>Coaching call</h2>
+        <p class="when">sabato 3 ottobre · ore 10:00 – 11:00</p>
+        <div class="actions">
+          <a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Eureka%20Group%20%C2%B7%20Coaching%20call&amp;dates=20261003T100000/20261003T110000&amp;ctz=Europe/Rome&amp;details=Eureka%20Group%0ACoaching%20call%0A%0AEntra%20su%20Zoom%3A%20https%3A//us06web.zoom.us/j/82769397080%3Fpwd%3DT7pzz9oqOGNkiw1EFnglV6clEWTeP6.1&amp;location=https%3A%2F%2Fus06web.zoom.us%2Fj%2F82769397080%3Fpwd%3DT7pzz9oqOGNkiw1EFnglV6clEWTeP6.1" target="_blank" rel="noopener">＋ Aggiungi a Google Calendar</a>
+          <a class="zoom" href="https://us06web.zoom.us/j/82769397080?pwd=T7pzz9oqOGNkiw1EFnglV6clEWTeP6.1" target="_blank" rel="noopener">Link Zoom</a>
+        </div>
+      </div>
+    </article>
+
+    <p class="note">
+      Orari in fuso orario di Roma: il tuo calendario li converte in automatico.
+    </p>
+  </main>
+
+  <footer>© 2026 Teresa Brach del Prever</footer>
+
+
+</body>
+</html>
